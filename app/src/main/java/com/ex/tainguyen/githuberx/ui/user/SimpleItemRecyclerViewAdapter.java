@@ -20,7 +20,7 @@ public class SimpleItemRecyclerViewAdapter
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(getView(parent, R.layout.user_list_content));
+        return new ViewHolder(getView(parent, R.layout.item_view_user_content));
     }
 
     public class ViewHolder

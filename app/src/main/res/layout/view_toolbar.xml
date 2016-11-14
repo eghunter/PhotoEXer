@@ -15,7 +15,7 @@
 
         <ProgressBar
             android:padding="@dimen/toolbar_padding"
-            android:visibility="visible"
+            android:visibility="gone"
             android:id="@+id/pb_content_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

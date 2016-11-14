@@ -7,7 +7,7 @@
     <data>
 
         <variable
-            name="userList"
+            name="dataModel"
             type="com.ex.tainguyen.githuberx.ui.user.viewmodel.UserListViewModel"/>
 
     </data>
@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        app:dataList="@{userList.itemList}"
+        app:dataList="@{dataModel.itemList}"
         app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/user_list_content"/>
+        tools:listitem="@layout/item_view_user_content"/>
 </layout>

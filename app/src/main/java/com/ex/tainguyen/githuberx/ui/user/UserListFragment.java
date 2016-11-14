@@ -25,7 +25,7 @@ import rx.subjects.PublishSubject;
 public class UserListFragment
         extends AbstractFragment {
 
-    PublishSubject mItemClickCommand = PublishSubject.create();
+    PublishSubject<String> mItemClickCommand = PublishSubject.create();
 
     @Inject
     UserListViewModel mViewModel;
@@ -70,7 +70,9 @@ public class UserListFragment
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         SimpleItemRecyclerViewAdapter adapter = new SimpleItemRecyclerViewAdapter();
         adapter.onItemClickListener()
-                .subscribe(dataPair -> mItemClickCommand.onNext(dataPair.second.name.get()));
+                .filter(dataPair -> dataPair != null && dataPair.second != null)
+                .map(dataPair -> dataPair.second.name.get())
+                .subscribe(mItemClickCommand::onNext);
 
         recyclerView.setAdapter(adapter);
     }

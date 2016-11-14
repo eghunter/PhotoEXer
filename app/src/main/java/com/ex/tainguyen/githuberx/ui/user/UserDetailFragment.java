@@ -24,7 +24,7 @@ public class UserDetailFragment
 
     @Override
     public int getLayoutId() {
-        return R.layout.user_detail;
+        return R.layout.fragment_user_detail;
     }
 
     @Override

@@ -1,12 +1,11 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="userList"
+            name="dataModel"
             type="com.ex.tainguyen.githuberx.ui.user.viewmodel.UserListViewModel"/>
 
     </data>
@@ -27,20 +26,11 @@
         master/detail flow.
 
         -->
-
-        <android.support.v7.widget.RecyclerView
+        <android.support.v4.widget.NestedScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/user_list"
-            android:name="com.ex.tainguyen.githuberx.ui.user.UserListFragment"
-            android:layout_width="@dimen/item_width"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:dataList="@{userList.itemList}"
-            app:layoutManager="LinearLayoutManager"
-            tools:context="com.ex.tainguyen.githuberx.ui.user.UserListActivity"
-            tools:listitem="@layout/user_list_content"/>
+            android:id="@+id/contain_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
         <FrameLayout
             android:id="@+id/user_detail_container"

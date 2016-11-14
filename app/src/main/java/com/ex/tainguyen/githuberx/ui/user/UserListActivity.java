@@ -34,26 +34,11 @@ public class UserListActivity
         if (savedInstanceState == null) {
             UserListFragment fragment = new UserListFragment();
             fragment.onItemClickListener()
-                    .subscribe(name -> {
-                        if (mTwoPane) {
-                            Bundle arguments = new Bundle();
-                            arguments.putString(UserDetailActivity.ARG_ITEM_ID, name);
-                            UserDetailFragment userDetailFragment = new UserDetailFragment();
-                            fragment.setArguments(arguments);
-                            getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.user_detail_container, userDetailFragment)
-                                    .commit();
-                        } else {
-                            Intent intent = new Intent(this, UserDetailActivity.class);
-                            intent.putExtra(UserDetailActivity.ARG_ITEM_ID, name);
-
-                            this.startActivity(intent);
-                        }
-                    });
+                    .subscribe(name -> openItem(name, mTwoPane));
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.contain_layout, new UserListFragment())
+                    .add(R.id.contain_layout, fragment)
                     .commit();
         }
     }
@@ -69,5 +54,25 @@ public class UserListActivity
     @Override
     public UserComponent getComponent() {
         return userComponent;
+    }
+
+    private String openItem(String name, boolean isTwoPanel) {
+        if (isTwoPanel) {
+            Bundle arguments = new Bundle();
+            arguments.putString(UserDetailActivity.ARG_ITEM_ID, name);
+            UserDetailFragment fragment = new UserDetailFragment();
+            fragment.setArguments(arguments);
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.user_detail_container, fragment)
+                    .commit();
+        } else {
+            Intent intent = new Intent(this, UserDetailActivity.class);
+            intent.putExtra(UserDetailActivity.ARG_ITEM_ID, name);
+
+            this.startActivity(intent);
+        }
+
+        return name;
     }
 }
