@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GithubErX</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_contributes_list">Contributes</string>
+    <string name="title_contributes_detail">Contributes Detail</string>
+    <string name="title_user_list">Users</string>
+    <string name="title_user_detail">User Detail</string>
+</resources>
