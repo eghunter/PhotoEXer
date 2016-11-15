@@ -1,9 +1,9 @@
 package com.ex.tainguyen.githuberx.di.modules;
 
-import com.ex.tainguyen.githuberx.model.mapper.UserMapper;
-import com.ex.tainguyen.githuberx.model.mapper.impl.UserMapperImpl;
-import com.ex.tainguyen.githuberx.repository.GitHubUserRepository;
-import com.ex.tainguyen.githuberx.repository.impl.GitHubUserRepositoryImpl;
+import com.ex.tainguyen.githuberx.model.mapper.PhotoMapper;
+import com.ex.tainguyen.githuberx.model.mapper.impl.PhotoMapperImpl;
+import com.ex.tainguyen.githuberx.repository.PhotoRepository;
+import com.ex.tainguyen.githuberx.repository.impl.PhotoRepositoryImpl;
 
 import javax.inject.Singleton;
 
@@ -19,13 +19,13 @@ public class RepositoryModule {
 
     @Singleton
     @Provides
-    public GitHubUserRepository getGitHubUserRepository(GitHubUserRepositoryImpl repository) {
+    public PhotoRepository getGitHubUserRepository(PhotoRepositoryImpl repository) {
         return repository;
     }
 
     @Singleton
     @Provides
-    public UserMapper getUserMapper(UserMapperImpl mapper) {
+    public PhotoMapper getUserMapper(PhotoMapperImpl mapper) {
         return mapper;
     }
 }

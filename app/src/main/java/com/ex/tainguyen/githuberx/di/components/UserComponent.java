@@ -1,10 +1,9 @@
 package com.ex.tainguyen.githuberx.di.components;
 
 import com.ex.tainguyen.githuberx.di.AScope;
-import com.ex.tainguyen.githuberx.di.modules.UserModule;
-import com.ex.tainguyen.githuberx.ui.user.UserDetailFragment;
-import com.ex.tainguyen.githuberx.ui.user.UserListActivity;
-import com.ex.tainguyen.githuberx.ui.user.UserListFragment;
+import com.ex.tainguyen.githuberx.di.modules.PhotoModule;
+import com.ex.tainguyen.githuberx.ui.photo.fragment.PhotoDetailFragment;
+import com.ex.tainguyen.githuberx.ui.photo.fragment.PhotoListFragment;
 
 import dagger.Component;
 
@@ -15,9 +14,9 @@ import dagger.Component;
 @AScope
 @Component(
         dependencies = {AppComponent.class}
-        , modules = {UserModule.class})
+        , modules = {PhotoModule.class})
 public interface UserComponent {
-    void inject(UserDetailFragment fragment);
+    void inject(PhotoDetailFragment fragment);
 
-    void inject(UserListFragment userListActivity);
+    void inject(PhotoListFragment userListActivity);
 }

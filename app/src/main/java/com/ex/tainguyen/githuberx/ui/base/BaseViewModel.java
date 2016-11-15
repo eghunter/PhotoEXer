@@ -14,10 +14,10 @@ public abstract class BaseViewModel<R>
 
     protected final CompositeSubscription mSubscription;
 
-    protected final R mRepository;
+    protected final R mUserCase;
 
-    public BaseViewModel(R repository) {
-        mRepository = repository;
+    public BaseViewModel(R userCase) {
+        mUserCase = userCase;
         mSubscription = new CompositeSubscription();
     }
 

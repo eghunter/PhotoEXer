@@ -1,6 +1,6 @@
 package com.ex.tainguyen.githuberx.data.net;
 
-import com.ex.tainguyen.githuberx.config.Connection;
+import com.ex.tainguyen.githuberx.config.APIConfig;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +19,7 @@ public class ServiceGenerator {
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
-                    .baseUrl(Connection.API_BASE_URL)
+                    .baseUrl(APIConfig.API_BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create());
 
@@ -38,7 +38,7 @@ public class ServiceGenerator {
             httpClient.addInterceptor(interceptor);
         }
 
-        httpClient.connectTimeout(Connection.CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS);
+        httpClient.connectTimeout(APIConfig.CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS);
         return httpClient.build();
     }
 

@@ -1,9 +1,9 @@
 package com.ex.tainguyen.githuberx.di.modules;
 
-import com.ex.tainguyen.githuberx.data.api.GitHubClient;
+import com.ex.tainguyen.githuberx.data.api.API;
 import com.ex.tainguyen.githuberx.data.net.ServiceGenerator;
-import com.ex.tainguyen.githuberx.data.service.GitHubService;
-import com.ex.tainguyen.githuberx.data.service.GitHubServiceImpl;
+import com.ex.tainguyen.githuberx.data.service.PhotoService;
+import com.ex.tainguyen.githuberx.data.service.PhotoServiceImpl;
 
 import javax.inject.Singleton;
 
@@ -19,13 +19,13 @@ public class ServiceModule {
 
     @Singleton
     @Provides
-    public GitHubClient getGitHubClient() {
-        return ServiceGenerator.createService(GitHubClient.class);
+    public API getGitHubClient() {
+        return ServiceGenerator.createService(API.class);
     }
 
     @Singleton
     @Provides
-    public GitHubService getGitHubService(GitHubServiceImpl service) {
+    public PhotoService getGitHubService(PhotoServiceImpl service) {
         return service;
     }
 }
